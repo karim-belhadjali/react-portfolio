@@ -1,13 +1,38 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .a-primary {
+    @apply dark:text-primary transition ease-in-out duration-500 dark:hover:text-[#fff];
+  }
+  .btn {
+    @apply w-max inline-block dark:text-primary p-5 rounded-md dark:border-primary border-2 border-solid transition ease-in-out duration-500 dark:hover:bg-[#fff] dark:hover:border-transparent dark:hover:text-bg;
+  }
+  .btn-primary {
+    @apply dark:bg-primary dark:text-bg;
+  }
+  .a-nav {
+    @apply dark:bg-transparent p-4 rounded-4xl dark:text-primary text-lg dark:hover:bg-[rgba(0,0,0,0.3)];
+  }
+  .card {
+    @apply dark:bg-bgvariant m-auto text-center flex flex-col gap-4 
+    hover:scale-[1.1]
+    rounded-3xl border border-solid dark:border-transparent p-8
+     dark:hover:bg-transparent dark:hover:border-primaryvariant transition ease-linear duration-150 cursor-default;
+  }
 }
